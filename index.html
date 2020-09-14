@@ -1,0 +1,163 @@
+<!doctype html>
+
+<head>
+<meta charset="UTF-8">
+<title>Tangram</title>
+<link rel="stylesheet" href="styles.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://adservice.google.com/adsid/integrator.js?domain=www.jqueryui.org.cn"></script>
+</head>
+<body>
+<div class="personalInfo">
+<ul>
+<li><span class="icon-user icon"></span><span class="text">User</span></li>
+<li><span class="icon-home icon"></span><span class="text">Home</span></li>
+<li><span class="icon-heart icon"></span><span class="text">Vote(3)</span></li>
+<li><span class="icon-cog icon"></span><span class="text">settings</span></li>
+</ul>
+</div>
+<div class="editArea">
+<span class="editIcon icon-pencil"></span>
+<ul class="editBox">
+<li id="draggable" >
+<span class="sticker-user">Thirteen</span>
+<div class="sticker-content" contenteditable="true"> want to say something?</div>
+<!--<textarea class="sticker-content"> </textarea> -->
+</li>
+</ul>
+</div>
+
+<div class="stage stage-2">
+<h1 class="appTitle">Retrospective</h1>
+<div class="boards boards-1">
+<div class="board board-enjoy">
+<h3 class="board-title"><img src="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/emotion-grin-icon.png" alt="" />happy</h3>
+<ul class="stickers" id="sortable">
+<li class="sticker">
+<span class="sticker-user">Adele</span>
+<span class="sticker-content">someone like you, I heard that you merry a girl</span>
+</li>
+
+</ul>
+
+</div>
+<div class="board board-confused">
+<h3 class="board-title"><img src="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/emotion-confuse-icon.png" alt="" />confused</h3>
+<ul class="stickers">
+</ul>
+
+</div>
+<div class="board board-frustrated">
+<h3 class="board-title"><img src="http://icons.iconarchive.com/icons/fatcow/farm-fresh/32/emotion-unhappy-icon.png" alt="" />frustrated</h3>
+<ul class="stickers">
+</ul>
+</div>
+<div class="board board-more">
+<h3 class="board-title">more</h3>
+<ul class="stickers">
+</ul>
+</div>
+<div class="board board-less">
+<h3 class="board-title">less</h3>
+<ul class="stickers">
+</ul>
+</div>
+<div class="board board-same">
+<h3 class="board-title">same</h3>
+<ul class="stickers">
+</ul>
+</div>
+</div>
+<div class="boards boards-2">
+<div class="boxs">
+<div class="box">
+<h4 contenteditable="true">unit test</h4>
+<ul class="collectionLists">
+
+</ul>
+<span class="vote icon-heart"></span>
+<span class="box-mark icon-attachment"></span>
+<span class="box-remove icon-remove"></span>
+</div>
+
+<button class="addBox icon-plus"></button>
+</div>
+
+</div>
+<div class="userInfo">
+<span class="icon-users"></span>
+<ul>
+<li class="userAvatar" data-title="Adele"><span class="icon-user"></span><span class="count">3</span></li>
+<li class="userAvatar" data-title="Swift"><span class="icon-user"></span><span class="count">5</span></li>
+<li class="userAvatar" data-title="Queen"><span class="icon-user"></span><span class="count">3</span></li>
+<li class="userAvatar" data-title="Linking"><span class="icon-user"></span><span class="count">4</span></li>
+<li class="userAvatar" data-title="Who"><span class="icon-user"></span><span class="count">1</span></li>
+</ul>
+</div>
+</div>
+
+ 
+
+</body>
+<script> 
+$(function() {
+
+$( ".stickers" ).sortable({
+update: function() {
+var liLength=$(this).find("li").length;
+$(this).find("li").eq(liLength-1).css("background-color",randomColor());
+}
+});
+
+$( "#draggable" ).draggable({
+connectToSortable: ".stickers",
+helper: "clone",
+revert: "invalid"
+});
+
+$( ".stickers" ).sortable({
+connectWith: ".collectionLists"
+}).disableSelection();
+
+$( ".collectionLists" ).sortable({
+connectWith: ".stickers"
+}).disableSelection();
+
+$(".addBox").click(function(){
+var box = createBox();
+$(box).insertBefore(".addBox");
+$( ".stickers" ).sortable({
+connectWith: ".collectionLists"
+}).disableSelection();
+$( ".collectionLists" ).sortable({
+connectWith: ".stickers"
+}).disableSelection();
+
+})
+
+
+$(".box-remove").click(function(){
+console.log(1);
+$(this).parent().remove();
+})
+
+});
+
+function randomColor(){
+var color = '#';
+var colors =['E6E6FA','FFE4E1','F5F5DC','9ACD32','F08080','F0E68C','ADD8E6','DDA0DD','F4A460','FFE4B5']
+color += colors[Math.floor(Math.random() * 10)];
+return color;
+}
+function createBox(){
+
+var boxHeader = '<h4 contenteditable="true">'+'title'+'</h4>';
+var boxContent = '<ul class="collectionLists">'+'</ul>'+'<span class="vote icon-heart">'+'</span>'+'<span class="box-mark icon-attachment">'+'</span>'+'<span class="box-remove icon-remove">'+'</span>';
+var boxDiv = '<div class="box">'+boxHeader+boxContent+'</div>';
+
+return boxDiv;
+}
+</script>
+</html>

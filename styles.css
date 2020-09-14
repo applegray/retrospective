@@ -1,0 +1,519 @@
+@font-face {
+font-family: 'icomoon';
+src:url('fonts/icomoon.eot');
+src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+url('fonts/icomoon.svg#icomoon') format('svg'),
+url('fonts/icomoon.woff') format('woff'),
+url('fonts/icomoon.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+font-family: 'icomoon';
+font-style: normal;
+
+font-weight: normal;
+-webkit-font-smoothing: antialiased;
+}
+
+/*scrollbar for Chrome begins*/
+::-webkit-scrollbar {
+width: 21px;
+height: 21px;
+border: 1px solid #E6E6E6;
+}
+::-webkit-scrollbar-button {
+width: 10px;
+height: 10px;
+
+background-image: url(../assets/images/core-grid-icons-sprite.png);
+background-size: 84px 600px;
+}
+::-webkit-scrollbar-button:start:decrement {
+background-position: -2px -504px;
+}
+::-webkit-scrollbar-button:end:increment {
+background-position: -2px -530px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+background-position: -4px -482px;
+}
+
+::-webkit-scrollbar-button:horizontal:increment {
+background-position: -8px -462px;
+}
+
+::-webkit-scrollbar-track {
+background-color: #FFFFFF;
+border: 1px solid #E6E6E6;
+}
+::-webkit-scrollbar-track:vertical {
+border-bottom: 0;
+border-top: 0;
+}
+::-webkit-scrollbar-track:horizontal {
+border-left: 0;
+border-right: 0;
+}
+::-webkit-scrollbar-thumb {
+background-color: #CCCCCC;
+border: 6px solid transparent;
+background-clip: content-box;
+}
+::-webkit-scrollbar-corner {
+background-color: #FFFFFF;
+border: 1px solid #E6E6E6;
+}
+::-webkit-resizer {
+background-color: #666666;
+}
+/*scrollbar for Chrome ends*/
+
+.icon-home:before {
+content: "\e600";
+}
+.icon-user:before {
+content: "\e604";
+}
+.icon-users:before {
+content: "\e603";
+}
+.icon-pencil:before {
+content: "\e601";
+}
+.icon-cog:before {
+content: "\e605";
+}
+.icon-remove:before {
+content: "\e606";
+}
+.icon-attachment:before {
+content: "\e607";
+}
+.icon-bookmark:before {
+content: "\e608";
+}
+.icon-heart:before {
+content: "\e60a";
+}
+.icon-happy:before {
+content: "\e60c";
+}
+.icon-sad:before {
+content: "\e60e";
+}
+.icon-shocked:before {
+content: "\e610";
+}
+.icon-confused:before {
+content: "\e611";
+}
+.icon-neutral:before {
+content: "\e612";
+}
+.icon-minus:before {
+content: "\e616";
+}
+.icon-plus:before {
+content: "\e617";
+}
+.icon-cancel-circle:before {
+content: "\e614";
+}
+.icon-checkmark:before {
+content: "\e615";
+}
+
+html,body{
+height: 100%;
+overflow: hidden;
+}
+button{
+padding: 5px 20px;
+border: 0;
+background: #e6e6e6;
+border: 1px solid #ddd;
+box-shadow: 0 0 5px #FFF inset;
+color: #777;
+}
+button:hover{
+background: #e0e0e0;
+border-color: #ccc;
+color:#333;
+}
+
+h3{
+text-align: center;
+font-weight: bold;
+color: #98D10C;
+font-size: 25px;
+font-style: italic;
+line-height: 30px;
+text-shadow: 1px 1px 1px #777;
+}
+ul,li{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+.appTitle{
+height: 5%;
+margin: 0;
+color: #126827;
+text-align: center;
+font-size: 2em;
+}
+.stage{
+margin: 0 auto;
+padding: 2%;
+overflow: auto;
+width:80%;
+height: 80%;
+float: left;
+border-radius: 50px;
+background: #E7F8C1;
+}
+.personalInfo{
+position: absolute;
+top:60px;
+right:0;
+}
+.personalInfo ul li{
+width: 60px;
+height: 60px;
+border-radius: 10px 0 0px 10px;
+margin: 5px 0;
+background-color: #8FCC58;	
+position: relative;
+}
+.personalInfo ul li .icon{
+border-radius: 10px 0 0px 10px;
+display: inline-block;
+width: 100%;
+height: 100%;
+position: absolute;
+left: 0;
+z-index: 1;
+background: #126827;
+text-align: center;
+line-height: 60px;
+}
+/*.personalInfo ul li:hover{
+-webkit-transform: scaleX(1.1);
+-moz-transform: scaleX(60px);
+-ms-transform: scaleX(60px);
+transform: scaleX(1.1);
+}*/
+.personalInfo ul li:hover .icon{
+-webkit-transform: translateX(-50px);
+-moz-transform: translateX(-50px);
+-ms-transform: translateX(-50px);
+transform: translateX(-50px);
+}
+.personalInfo ul li .text{
+position: absolute;
+display: inline-block;
+width: 50px;
+right: 0;
+z-index: 0;
+text-align: center;
+line-height: 60px;
+color: #ffffff;
+}
+.boards{
+width:100%;
+height: 85%;
+overflow: hidden;
+}
+.userInfo{
+border: 1px solid #ccc;
+height: 9%;
+padding: 0 10px;
+background: #B0C664;
+}
+.userInfo .icon-users{
+margin: 0 10px;
+height: 50%;
+font-size: 25px;
+color: #2A3513;
+}
+.userInfo ul{
+height: 50%;
+display: inline-block;
+}
+.userInfo li{
+display: inline-block;
+margin-right: 10px;
+}
+.userAvatar{
+display: inline-block;
+width:30px;
+height: 30px;
+text-align: center;
+background: #fefefe;
+border-radius: 20%;
+position: relative;
+}
+.userAvatar:hover::after{
+content: attr(data-title);
+padding:0 3px;
+border-radius: 5px;
+position: absolute;
+z-index: 3;
+top:100%;
+left: 0;
+display: inline-block;
+background: #FE6152;
+}
+.userAvatar:hover::before{
+content: '';
+width: 0px;
+height: 0px;
+border: 5px solid transparent;
+border-bottom-color: #FE6152;
+position: absolute;
+z-index: 3;
+top:21px;
+left: 10px;
+
+}
+.userName{
+font-weight: bold;
+}
+
+.count{
+position: absolute;
+display: inline-block;
+width:15px;
+height: 15px;
+border-radius: 50%;
+background: #d7000f;
+top:-5px;
+right: -5px;
+color: #ddd;
+font-size: 14px;
+}
+.board {
+margin: 1%;
+overflow: hidden;
+width: 15%;
+height:96%;
+float: left;
+position: relative;
+border-top: 5px solid #a1cb2f;
+background: #fff;
+-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+
+}
+.board-title{
+height: 8%;
+margin: 0;
+}
+.board:first-child{
+margin-left: 0;
+}
+.board:last-child{
+margin-right: 0;
+}
+
+
+.stickers{
+height: 90%;
+overflow-y: auto;
+
+}
+.stickers li{
+float: left;
+padding: 5px;
+margin: 5px;
+
+/* Firefox */ 
+-moz-box-shadow:3px 3px 3px rgba(33,33,33,.4); 
+/* Safari+Chrome */ 
+-webkit-box-shadow: 3px 3px 3px rgba(33,33,33,.4); 
+/* Opera */ 
+box-shadow: 3px 3px 3px rgba(33,33,33,.4); 
+}
+.sticker-user{
+font-weight: bold;
+}
+.sticker-user:after{
+content:':';
+}
+.sticker-content{
+
+}
+.board-stage ul.stickers li:nth-child(odd){ 
+-o-transform:rotate(4deg); 
+-webkit-transform:rotate(4deg); 
+-moz-transform:rotate(4deg); 
+
+} 
+.board-stage ul.stickers li:nth-child(2n){ 
+-o-transform:rotate(-3deg); 
+-webkit-transform:rotate(-3deg); 
+-moz-transform:rotate(-3deg); 
+
+} 
+.board-stage ul.stickers li:nth-child(6n){ 
+-o-transform:rotate(5deg); 
+-webkit-transform:rotate(5deg); 
+-moz-transform:rotate(5deg); 
+
+}
+
+.board-stage {
+width: 100%;
+height: 640px;
+}
+.board-stage .sticker{
+width:250px;
+height: 250px;
+}
+.editArea{
+position: fixed;
+right:0;
+bottom: 20px;
+width: 15%;
+height: 20%;
+}
+.editArea .icon-pencil{
+font-size: 40px;
+position: absolute;
+top:-8px;
+left: 0px;
+z-index: 1;
+color: #F0746D;
+}
+
+.editBox{
+background: #a1cb2f;
+height: 70%;
+padding: 20px;
+}
+.editBox li{
+list-style-type: none;
+width:100%;
+height:85%;
+overflow: auto;
+background: #ffffff;
+box-shadow: 5px 5px 10px rgba(65, 65, 65, 0.68); 
+font-size: 14px;
+font-family: 'Short Stack', cursive;
+-webkit-transform:rotate(-6deg); 
+-o-transform:rotate(-6deg); 
+-moz-transform:rotate(-6deg);
+
+}
+
+ 
+
+/*-------------stage 2--------------------*/
+.stage-2 h3{
+font-size: 18px;
+font-style: italic;
+line-height: 28px;
+margin: 0px;
+}
+.stage-2 .boards-1{
+border-bottom: 4px dashed #ccc;
+height: 42%;
+}
+.stage-2 .boards-2{
+height: 42%;
+padding: 5px 0 0 0;
+}
+.stage-2 .board {
+height: 90%;
+float: left;
+position: relative;
+border-top: 5px solid #a1cb2f;
+background: #fff;
+
+}
+
+.stage-2 .board-title{
+height: 10%;
+}
+.stage-2 .stickers{
+height: 200px;
+font-style: 14px;
+}
+.stage-2 .stickers li{
+float: left;
+padding: 0px;
+margin: 2px;
+box-shadow: none;
+font-size: 13px;
+}
+
+
+.boxs{
+overflow: hidden;
+overflow-y:auto;
+height: 90%;
+float: left;
+}
+.box{
+width:150px;
+height: 90%;
+background: #fff;
+float: left;
+margin:5px;
+position: relative;
+}
+.box h4{
+text-align: center;
+}
+.vote{
+position: absolute;
+display: inline-block;
+width: 15px;
+height: 15px;
+right: 15px;
+top:5px;
+color: rgba(0,0,0,.1);
+cursor: pointer;
+}
+.box-mark{
+position: absolute;
+display: inline-block;
+font-size: 32px;
+color: green;
+top: -5px;
+left: -5px;
+}
+.box-remove{
+color: #777;
+position: absolute;
+display: inline-block;
+font-size: 20px;
+right: 5px;
+bottom: 5px;
+z-index: -1;
+}
+.box:hover .vote{
+color: #d7000f;
+
+}
+.box:hover .box-remove{
+z-index: 2;
+}
+.box h4{
+height: 10%;
+margin: 0;
+}
+.box li{
+font-size: 13px;
+}
+.addBox{
+float: left;
+}
+.collectionLists{
+height: 90%;
+}
+
+/*#DBECA8,#E7F8C1*/
